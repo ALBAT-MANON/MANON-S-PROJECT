@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albat-</title>
+</head>
+<body onload="startTime()">
+    <center>
+    <style>
+        #txt{
+            font-size: xx-large;
+            background-color: rgb(11, 11, 11);
+            color: white;
+            width: 100px;
+            height: 100px;
+            padding: 40px;
+            outline:    10px solid #247a9b;
+            border:5px solid #040f6e;
+            font-family: fantasy;
+            border-radius: 70%;
+            display:inline-block ;
+            position: relative;
+            background-image: url("th-removebg-preview");
+        }
+    </style>
+    <h2><EM>CLOCK</EM></h2>
+
+    <div id="txt"></div>
+
+    <script>
+        function startTime(){
+           const today= new Date();
+           let h = today.getHours();
+           let m = today.getMinutes();
+           let s = today.getSeconds();  
+           m = checkTime(m);
+           s = checkTime(s);
+           document.getElementById('txt'). innerHTML
+           = h + ":" + m + ":" + s;
+           setTimeout(startTime, 1000);  
+        }
+        
+        function checkTime(i){
+            if (i< 10){i = "0" + i};
+            return i;
+        }
+    </script>
+        </center>
+</body>
+</html>
